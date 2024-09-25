@@ -1,0 +1,3 @@
+[submodule "RH-Frontend"]
+	path = RH-Frontend
+	url = https://github.com/bassoumi/RH-Frontend.git
