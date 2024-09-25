@@ -1,0 +1,11 @@
+.readonly-select {
+    appearance: none;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    background: transparent; /* Remove the background color */
+    padding-right: 1rem; /* Add padding to align text properly */
+    pointer-events: none; /* Prevent interaction */
+  }
+  .team-member-gray {
+    background-color: #4a5568; /* Gray color from Tailwind CSS */
+}

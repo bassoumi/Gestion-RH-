@@ -1,0 +1,98 @@
+
+<br><br>
+<br>
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center">View Users</h1>
+
+        <div class="row mt-3">
+          <h3 class="ml-5 mb-4">Department de Informatique :</h3>
+          <div *ngIf="hasInformatiqueUsers()" class="row">
+            <div *ngFor="let user of getInformatiqueUsers()" class="col-md-4 mb-4 ">
+              <div class="card card-margin bg-gray-200">
+                <div class="card-header no-border">
+                  <img [src]="user.image" alt="{{ user.name }}'s profile" class="img-fluid rounded-circle mb-2 mt-2" style="width: 60px; height: 60px;">
+                  <h5 class="card-title ml-3 mt-1">{{ user.name }}</h5>
+                </div>
+                <hr class="mt-1">
+                <div class="card-body pt-0">
+                  <div class="widget-49">
+                    <div class="widget-49-meeting-info">
+                      <span class="widget-49-pro-title mb-1"><strong>Email :</strong> {{ user.email }}</span><br>
+                      <span class="widget-49-pro-title mb-1"><strong>Department :</strong> {{ user.department }}</span><br>
+                      <span class="widget-49-pro-title mb-1"><strong>Poste :</strong> {{ user.job }}</span>
+                    </div>
+                    <div class="widget-49-meeting-action">
+                        <button class="btn btn-primary mr-2" [routerLink]="'/update/' + user.id">Edit</button>
+                        <button class="btn btn-danger" (click)="deleteUser(user.id)">Supprimer</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Section pour le département Vente -->
+        <div class="row mt-3">
+          <h3 class="ml-5 mb-4">Department de Vente :</h3>
+          <div *ngIf="hasVenteUsers()" class="row">
+            <div *ngFor="let user of getVenteUsers()" class="col-md-4 mb-4">
+              <div class="card card-margin bg-gray-200">
+                <div class="card-header no-border">
+                  <img [src]="user.image" alt="{{ user.name }}'s profile" class="img-fluid rounded-circle mb-2 mt-2" style="width: 60px; height: 60px;">
+                  <h5 class="card-title ml-3 mt-1">{{ user.name }}</h5>
+                </div>
+                <hr class="mt-1">
+                <div class="card-body pt-0">
+                  <div class="widget-49">
+                    <div class="widget-49-meeting-info">
+                      <span class="widget-49-pro-title mb-1"><strong>Email :</strong> {{ user.email }}</span><br>
+                      <span class="widget-49-pro-title mb-1"><strong>Department :</strong> {{ user.department }}</span><br>
+                      <span class="widget-49-pro-title mb-1"><strong>Poste :</strong> {{ user.job }}</span>
+                    </div>
+                    <div class="widget-49-meeting-action">
+                        <button class="btn btn-primary  mr-2" [routerLink]="'/update/' + user.id">Edit</button>  
+                        <button class="btn btn-danger" (click)="deleteUser(user.id)">Supprimer</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+            <h3 class="ml-5 mb-4">Department de Achat :</h3>
+            <div *ngIf="hasAchatUsers()" class="row">
+              <div *ngFor="let user of getAchatUsers()" class="col-md-4 mb-4">
+                <div class="card card-margin bg-gray-200">
+                  <div class="card-header no-border">
+                    <img [src]="user.image" alt="{{ user.name }}'s profile" class="img-fluid rounded-circle mb-2 mt-2" style="width: 60px; height: 60px;">
+                    <h5 class="card-title ml-3 mt-1">{{ user.name }}</h5>
+                  </div>
+                  <hr class="mt-1">
+                  <div class="card-body pt-0">
+                    <div class="widget-49">
+                      <div class="widget-49-meeting-info">
+                        <span class="widget-49-pro-title mb-1"><strong>Email :</strong> {{ user.email }}</span><br>
+                        <span class="widget-49-pro-title mb-1"><strong>Department :</strong> {{ user.department }}</span><br>
+                        <span class="widget-49-pro-title mb-1"><strong>Poste :</strong> {{ user.job }}</span>
+                      </div>
+                      <div class="widget-49-meeting-action">
+                          <button class="btn btn-primary  mr-2" [routerLink]="'/update/' + user.id">Edit</button>  
+                          <button class="btn btn-danger" (click)="deleteUser(user.id)">Supprimer</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+  
+      </div>
+    </div>
+  </div>
+  

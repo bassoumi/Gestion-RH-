@@ -1,0 +1,37 @@
+
+
+<br><br><br><br><br><br><br>
+<p class="ml-5 text-lg" style="margin-left: 30px;">Nombre total de demandes : {{ nombreDemandes  }}</p>
+<div class="row justify-content-center">
+<div class="table-responsive-sm" style="width: 80%;">
+ 
+<div *ngIf="confirmationMessage" [ngClass]="['alert', confirmationClass]" role="alert">
+  {{ confirmationMessage }}
+</div>
+    <table class="table table-bordered">
+        <thead>
+            <tr style="text-align: center;">
+                <th>Employée</th>
+                <th>Titre</th>
+                <th>Nombre de jours</th>
+                <th>Raison</th>
+                <th>Date de debut</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let demande of demandes" style="text-align: center;">
+                <td>{{ demande.user }}</td>
+                <td>{{ demande.title }}</td>
+                <td>{{ demande.number_of_days }}</td>
+                <td>{{ demande.reason }}</td>
+                <td>{{ demande.date_debut | date }}</td>
+                <td class="text-center">
+                    <button (click)="approuverDemande(demande)" class="btn btn-success rounded mx-2">Approuver</button>
+                    <button (click)="rejeterDemande(demande)" class="btn btn-danger rounded">Refuser</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

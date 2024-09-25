@@ -1,0 +1,80 @@
+
+
+
+
+<style>
+
+    .big-card:hover {
+        background-image: lightblue; /* Couleur de fond au survol */
+        cursor: default;
+        transition: background-color 0.5s, cursor 0.5s;  /* Curseur de la souris au survol */
+    }
+
+    .big-card:hover img {
+        transform: scale(1.07); /* Zoom de l'image au survol */
+    }
+    /* Style de l'image */
+    .big-card img {
+        transition: transform 0.3s; /* Transition de l'effet de transformation */
+    }
+
+    /* Effet de zoom de l'image au survol */
+
+</style>
+
+<div class="container mt-5">
+    
+    <br><br><br>
+    <div id="cardContainer_informatique_department" class="card mb-3 border-0 shadow ml-5"  style="max-width: 1100px;">
+        <div class="row g-0 big-card">
+            <div class="col-md-4">
+                <img src="../../assets/img/OIP.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body"> <!-- Retrait de la classe big-card de la div card-body -->
+                    <h5 class="card-title"><strong>departement Informatique</strong></h5>
+                    <p class="card-text">Notre departement informatique est dédié à fournir un support technique complet à nos employés. nous sommes là pour vous aider à réussir dans votre travail quotidien.</p>
+                   
+                    
+                   <br>
+                   <a routerLink="/Department/informatique" class="btn btn-primary">Voir les employés</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pour le service de vente -->
+    <div id="cardContainer_vente_department" class="card mb-3 border-0 shadow ml-5"  style="max-width: 1100px;">
+        <div class="row g-0 big-card">
+            <div class="col-md-4">
+                <img src="../../assets/img/PointP_777_636549148478693803.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body"> <!-- Retrait de la classe big-card de la div card-body -->
+                    <h5 class="card-title"><strong>departement de vente</strong></h5>
+                    <p class="card-text">Notre équipe de vente est là pour répondre à vos besoins et vous proposer les meilleurs produits</p>
+                   <br>
+                    <a routerLink="/Department/vente" class="btn btn-primary">Voir les employés</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cardContainer_vente_department" class="card mb-3 border-0 shadow ml-5 " style="max-width: 1100px;">
+        <div class="row g-0 big-card">
+            <div class="col-md-4">
+                <img src="../../assets/img/R.jpg"  class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body"> <!-- Retrait de la classe big-card de la div card-body -->
+                    <h5 class="card-title"><strong>departement de achats</strong></h5>
+                    <p class="card-text">Notre departement d'achat s'occupe de trouver les fournitures dont vous avez besoin .</p>
+                   <br>
+                    <a routerLink="/Department/achat" routerLinkActive="router-link-active"  class="btn btn-primary">Voir les employés</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

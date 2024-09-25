@@ -1,0 +1,42 @@
+<!-- formation-add.component.html -->
+<br><br><br><br>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow bg-white rounded" style="width: 100%; max-width: 600px;">
+    <div class="card-body">
+      <h2 class="text-center">Ajouter une Formation</h2>
+      <form (ngSubmit)="addFormation()" [formGroup]="formgroup">
+        <div class="form-group">
+          <label for="title">Titre:</label>
+          <input type="text" id="title" formControlName="title" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea id="description" formControlName="description" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input type="date" id="date" formControlName="date" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="duration">Durée:</label>
+          <input type="text" id="duration" formControlName="duration" class="form-control" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="location">Location:</label>
+          <input type="text" id="location" formControlName="location" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="image" >Télécharger l'image<span class="text-danger"> *</span></label>
+          <input type="file" id="image" class="form-control-file" (change)="onFileChange($event)">
+        </div>
+        <div class="form-group text-center mb-3">
+          <img *ngIf="imageUrl" [src]="imageUrl.toString()" alt="Uploaded Image" class="img-fluid rounded mt-2">
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Ajouter</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

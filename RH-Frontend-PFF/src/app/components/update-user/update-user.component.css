@@ -1,0 +1,16 @@
+.image-input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* Fond blanc transparent */
+    color: #333;
+    border: none; /* Bordure plus épaisse */
+    border-radius: 8px; /* Coins arrondis */
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px; /* Taille de police plus grande */
+  }
+  

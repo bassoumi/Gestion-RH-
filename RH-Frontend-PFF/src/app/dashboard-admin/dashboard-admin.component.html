@@ -1,0 +1,59 @@
+<br><br><br><br><br>
+<div class="admin-dashboard-container">
+  <div class="admin-demandes-graphique">
+    <h3>Graphique Circulaire des Demandes par Statut</h3>
+    <ngx-charts-pie-chart
+      [results]="demandeData"
+      [legend]="true"
+      [labels]="true">
+    </ngx-charts-pie-chart>
+  </div>
+  
+  <div class="user-growth-graphique">
+    <h3>Graphique Linéaire de la Croissance des Utilisateurs</h3>
+    <ngx-charts-line-chart
+      [results]="userData"
+      [legend]="true"
+      [xAxis]="true"
+      [yAxis]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="'Date'"
+      [yAxisLabel]="'Nombre d\'utilisateurs'">
+    </ngx-charts-line-chart>
+  </div>
+  <div class="total-requests-bar-graphique">
+    <h3>Graphique des Demandes Totales par Jour</h3>
+    <ngx-charts-bar-vertical
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="totalRequestsData"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="'Date'"
+      [yAxisLabel]="'Nombre de Demandes'">
+    </ngx-charts-bar-vertical>
+  </div> 
+ <div class="demandes-bar-graphique">
+    <h3>Graphique des Demandes par Statut</h3>
+    <ngx-charts-bar-vertical
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="demandeData"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel">
+    </ngx-charts-bar-vertical>
+  </div>
+  
+
+</div>

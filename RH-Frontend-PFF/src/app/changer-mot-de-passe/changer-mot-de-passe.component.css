@@ -1,0 +1,10 @@
+
+  .custom-padding {
+    padding-left:80px;  /* Ajustez ces valeurs selon vos besoins */
+    padding-right:80px; /* Ajustez ces valeurs selon vos besoins */
+  }
+  .custom-center {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }

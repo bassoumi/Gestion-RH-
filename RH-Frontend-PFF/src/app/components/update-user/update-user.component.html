@@ -1,0 +1,79 @@
+
+<style>
+  #grid-zip,#grid-department {
+  cursor: not-allowed;
+}
+
+
+
+</style>
+<br><br>
+<div class=" mt-5">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="w-1/2 mx-auto my-4 p-4 bg-white rounded-lg shadow-lg" enctype="multipart/form-data">
+    <div class="bg-white rounded px-4 pt-4 pb-4 mb-2 flex flex-col">
+      <div class="-mx-3 md:flex mb-1">
+        <div class="md:w-1/2 px-3 mb-3 md:mb-0">
+          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-image">
+            Image
+          </label>
+          <!-- Display the current image -->
+          <div class="relative">
+            <img *ngIf="user.image" [src]="user.image" alt="User Image" id="userImage" class="mt-2 w-full">
+            <!-- Field to select a new image -->
+            <input type="file" (change)="onFileChange($event)" class="image-input" id="grid-image">
+          </div>
+        </div>
+        <!-- Other form fields -->
+        <div class="md:w-1/2 px-3 mb-0 md:mb-0">
+          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-name">
+            Name
+          </label>
+          <input type="text" formControlName="name" name="name" [(ngModel)]="user.name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-2 px-3 mb-2" id="grid-name" placeholder="Jane">
+        </div>
+        <div class="md:w-1/2 px-3">
+          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-email">
+            Email
+          </label>
+          <input type="text" formControlName="email" name="email" [(ngModel)]="user.email" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-2 px-3" id="grid-email" placeholder="Doe">
+        </div>
+      </div>
+      <div class="-mx-3 md:flex mb-4">
+        <div class="md:w-full px-3">
+          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-adresse">
+            Adresse
+          </label>
+          <input type="text" formControlName="adresse" name="adresse" [(ngModel)]="user.adresse" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-2 px-3 mb-2" id="grid-adresse" >
+          <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
+        </div>
+      </div>
+      <div class="-mx-3 md:flex mb-2">
+        <div class="md:w-1/2 px-3 mb-4 md:mb-0">
+          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-phone">
+            Phone
+          </label>
+          <input type="text" formControlName="phone" name="phone" [(ngModel)]="user.phone" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-2 px-3" id="grid-phone" placeholder="Albuquerque">
+        </div>
+        <div class="md:w-1/2 px-3 mb-4 md:mb-0">
+          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-department">
+            Department
+          </label>
+          <div class="relative">
+            <input formControlName="department" name="department" [(ngModel)]="user.department" class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-2 px-3 pr-8 rounded" id="grid-department" readonly>
+          </div>
+        </div>
+        <div class="md:w-1/2 px-3">
+          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-job">
+            Post
+          </label>
+          <input type="text" formControlName="job" name="job" [(ngModel)]="user.job" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-2 px-3" id="grid-job" readonly>
+        </div>
+      </div>
+      <br>
+      <div class="text-end">
+        <button type="submit" class="btn btn-primary mx-2">Sauvegarder</button>
+        <a id="delete-link" type="button" class="btn btn-danger mx-2 " (click)="deleteUser(user.id)">Supprimer</a>
+      </div>
+    </div>
+  </form>
+  
+</div>

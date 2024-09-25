@@ -1,0 +1,74 @@
+.nav-link {
+  display: inline-block;
+  padding: 8px 16px;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.nav-link:last-child {
+  margin-right: 0; /* Remove the margin from the last element */
+}
+
+.nav-link:hover , .nav-link.active{
+  color: rgb(232, 54, 232);
+  text-decoration: underline;
+}
+.relative {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 14%;
+    background-color:  #4a5568;
+    z-index: 1;
+    min-width: 160px;
+    padding: 0;
+    margin: 0;
+}
+
+.relative:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: white;
+    font-size: 18px;
+    background-color: #4a5568;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+    text-decoration: underline;
+    color: #4a5568;
+    font-weight: bold;
+}
+
+
+.ml-4 {
+    margin-left: 1rem;
+}
+.notification-dot {
+  height: 16px; /* Adjust as needed */
+  width: 16px; /* Adjust as needed */
+  background-color: white;
+  color: red; /* Adjust color as needed */
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 5px; /* Adjust as needed */
+  right:0px; /* Adjust as needed */
+  font-size: 18px; /* Adjust as needed */
+  font-weight: bold; /* Make the exclamation mark bold */
+}

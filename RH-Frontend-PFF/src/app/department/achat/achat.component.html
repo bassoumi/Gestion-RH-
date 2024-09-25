@@ -1,0 +1,94 @@
+
+<br><br><br>
+<div class="container mt-5">
+  <h2>Team</h2>
+<p>Notre equipe de Achat : </p>
+<div class="flex justify-end items-center ">
+  <form class="d-flex" (submit)="onSearch($event)" role="search">
+    <input id="searchInput" name="phone" [(ngModel)]="searchQueryPhone" class="border-2 border-gray-300 bg-white h-10 pl-5 pr-10 rounded-lg text-sm focus:outline-none"
+          type="search" placeholder="Search by phone">
+          <select id="searchDepartment" name="department" class="readonly-select border-2 border-gray-300 bg-white h-10 pl-5 pr-10 rounded-lg text-sm focus:outline-none ml-2">
+            <option value="achat">Achat</option>
+          </select>
+
+
+   <!--  <button id="searchButton" type="submit" class="ml-2 px-4 py-2 bg-blue-500 text-white rounded-lg">Search</button> -->
+  </form>
+</div>
+
+
+<br>
+<ng-container *ngIf="searchQueryPhone && searchResults.length > 0 ">
+  <div class="row">
+    <ng-container *ngFor="let user of users">
+      <ng-container *ngIf="user.department === 'achat'">
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <!-- Team Section -->
+          <section id="team" class="team section">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+            </div><!-- End Section Title -->
+
+            <div class="container">
+              <div class="team-member bg-white rounded shadow">
+                <div class="member-img">
+                  <img [src]="user.image" class="img-fluid rounded-top" alt="{{ user.name }}" [ngStyle]="{'height.px': 200, 'width.px': 500}">                </div>
+         
+                <div class="member-info p-3">
+                  <h4>{{ user.name }}</h4>
+                  <span>{{ user.job }}</span>
+                  <div class="widget-49-meeting-action mt-2 d-flex">
+                    <button class="btn btn-primary" routerLink="/update/{{user.id}}">Edit</button>
+                    <button class="btn btn-danger mx-2" (click)="deleteUser(user.id)">Delete</button>
+                  </div>
+                </div>
+              </div><!-- End Team Member -->
+            </div>
+          </section>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</ng-container>
+
+
+<ng-container *ngIf="searchQueryPhone && searchResults.length == 0">
+  <p>rine n a trouver</p>
+</ng-container>
+
+
+<ng-container *ngIf="(!searchQueryPhone) && users">
+  <div class="row">
+    <ng-container *ngFor="let user of users">
+      <ng-container *ngIf="user.department === 'achat'">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <!-- Team Section -->
+          <section id="team" class="team section">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+            </div><!-- End Section Title -->
+
+            <div class="container">
+              <div class="team-member bg-white rounded shadow">
+                <div class="member-img">
+                  <img [src]="user.image" class="img-fluid rounded-top" alt="{{ user.name }}" [ngStyle]="{'height.px': 200, 'width.px': 500}">                </div>
+
+                <div class="member-info p-3">
+                  <h4>{{ user.name }}</h4>
+                  <span>{{ user.job }}</span>
+                  <div class="widget-49-meeting-action mt-2 d-flex">
+                    <button class="btn btn-primary" routerLink="/update/{{user.id}}">Edit</button>
+                    <button class="btn btn-danger mx-2" (click)="deleteUser(user.id)">Delete</button>
+                  </div>
+                </div>
+              </div><!-- End Team Member -->
+            </div>
+          </section>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+
+</ng-container>
+</div>

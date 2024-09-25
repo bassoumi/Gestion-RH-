@@ -1,0 +1,66 @@
+/* dashboard-admin.component.css */
+
+.admin-dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(387px, 1fr)); /* Colonnes responsives */
+    grid-gap: 20px; /* Espacement entre les éléments */
+    max-width: 1200px; /* Largeur maximale de la grille */
+   /* Centrer la grille sur la page */
+  }
+  
+  .admin-dashboard-container > div {
+    border: 1px solid #ccc; /* Bordure pour visualisation */
+    padding: 10px; /* Espacement interne */
+    height: 300px; /* Hauteur fixe pour chaque bloc de graphique */
+  }
+  /* dashboard-admin.component.css */
+/* dashboard-admin.component.css */
+
+.demandes-bar-graphique .chart-container {
+    position: relative; /* Position relative pour le conteneur du graphique */
+  }
+  
+  .demandes-bar-graphique .chart-container .ngx-charts-legend {
+    position: absolute; /* Position absolue pour la légende */
+    top: 10px; /* Ajustez la position verticale selon vos besoins */
+    right: 10px; /* Ajustez la position horizontale selon vos besoins */
+    background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent pour la légende */
+ 
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour l'effet de profondeur */
+  }
+  
+.total-requests-line-graphique {
+    border: 1px solid #ccc; /* Bordure pour visualisation */
+ /* Espacement interne */
+    height: 300px; /* Hauteur fixe pour le bloc de graphique */
+  }
+  
+  .total-requests-line-graphique ngx-charts-line-chart {
+    height: 100%; /* Remplir la hauteur du conteneur parent */
+  }
+  
+
+  
+/* Styles spécifiques au graphique des demandes par statut */
+.admin-demandes-graphique ngx-charts-bar-vertical {
+    height: 300px; /* Ajustez la hauteur au besoin */
+  }
+  
+  /* Styles pour ajuster la taille des barres */
+  .admin-demandes-graphique ngx-charts-bar-vertical .bar {
+    rx: 3px; /* Bord arrondi */
+    ry: 3px; /* Bord arrondi */
+    width: 10px; /* Largeur réduite des barres */
+  }
+  
+  /* Ajustez les couleurs et autres styles selon vos préférences */
+  
+  .admin-demandes-graphique,
+  .user-growth-graphique,
+  .demandes-bar-graphique,
+  .total-requests-bar-graphique {
+    height: 100%; /* Hauteur à 100% pour remplir le conteneur parent */
+  }
+  /* dashboard-admin.component.css */
+

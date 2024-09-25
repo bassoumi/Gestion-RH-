@@ -1,0 +1,73 @@
+<br><br><br>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 mt-5">
+      <div class="card">
+        <h5 class="text-center mb-2 mt-2">Nouvel Employé</h5>
+        <hr>
+        <form class="form-card" [formGroup]="formgroup">
+         
+          <div class="row justify-content-between text-left mb-3 mt-2" style="padding-top: 0;">
+            <div class="form-group col-sm-6 flex-column d-flex"> 
+              <label class="form-control-label px-3">Nom et Prénom <span class="text-danger"> *</span></label>
+              <input type="text" id="fname" name="name" formControlName="name" placeholder="Enter your name"> 
+              <div *ngIf="errorMessage && errorMessage.includes('Username')">
+                <small class="text-danger">{{ errorMessage }}</small>
+              </div>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex"> 
+              <label class="form-control-label px-3">Adresse<span class="text-danger"> *</span></label> 
+              <input type="text" id="lname" name="adresse" formControlName="adresse" placeholder="Enter your address"> 
+            </div>
+          </div>
+          <div class="row justify-content-between text-left mb-3" style="padding-top: 0;">
+            <div class="form-group col-sm-6 flex-column d-flex"> 
+              <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label> 
+              <input type="email" id="email" name="email" formControlName="email" placeholder="email"> 
+              <div *ngIf="errorMessage && errorMessage.includes('Email')">
+                <small class="text-danger">{{ errorMessage }}</small>
+              </div>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex"> 
+              <label class="form-control-label px-3">Numero de Telephone <span class="text-danger"> *</span></label> 
+              <input type="text" id="mob" name="phone" formControlName="phone" placeholder="Phone"> 
+            </div>
+          </div>
+          <div class="row justify-content-between text-left mb-0" style="padding-top: 0;">
+            <div class="form-group col-sm-6 flex-column mb-4 d-flex">
+              <label class="form-control-label px-3">Département<span class="text-danger"> *</span></label>
+              <select id="department" formControlName="department" name="department" class="form-control" required>
+                <option value="" disabled selected>Choisissez votre département</option>
+                <option value="informatique">Informatique</option>
+                <option value="vente">Ventes</option>
+                <option value="achat">Achat</option>
+              </select>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex" id="jobGroup" style="display: none;"> 
+              <label class="form-control-label px-3">Poste<span class="text-danger"> *</span></label> 
+              <select id="job" formControlName="job" name="job" class="form-control" required>
+                <option value="" disabled selected>Choisissez votre poste</option>
+              </select>
+            </div>
+          </div>
+          <div class="row justify-content-between text-left mb-3" style="padding-top: 0;">
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3">Télécharger l'image<span class="text-danger"> *</span></label>
+              <input type="file" id="image" (change)="onFileChange($event)">
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <!-- Affichage de l'image -->
+              <img *ngIf="imageUrl" [src]="imageUrl.toString()" alt="Uploaded Image" class="img-fluid rounded mt-2">
+            </div>
+          </div>
+          <div class="form-group col-sm-6 flex-column d-flex ml-auto mb-3">
+            <label class="form-control-label px-3"><span class="text-danger"></span></label>
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn btn-primary"  (click)="addUser()">Ajouter un Employé</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

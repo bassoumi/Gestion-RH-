@@ -1,0 +1,22 @@
+<br><br><br><br><br><br>
+<h1 style="margin-left: 25px;"> Tous les Formations : </h1>
+<div class="card__container ">
+    <article class="card__article" *ngFor="let formation of formations">
+      <img [src]="formation.image" alt="image" class="card__img">
+  
+      <div class="card__data">
+         <h3 class="card__title">{{ formation.title }}</h3>
+      </div>
+  
+      <!-- Assurez-vous d'avoir une propriété "image" dans votre interface -->
+      <img [src]="formation.image" alt="image" class="card__bg">
+      
+      <!-- Bouton pour voir plus -->
+
+      <a class="card__button" (click)="deleteFormation(formation.id)">
+         Supprimer cette Formation <i class="ri-arrow-right-line"></i>
+     </a>
+    </article>
+    
+  </div>
+  
