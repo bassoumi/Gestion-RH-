@@ -1,0 +1,152 @@
+/* From Uiverse.io by Yaya12085 */ 
+.form {
+    background-color: rgba(255, 255, 255, 0.2); /* Fond transparent avec opacité */
+    backdrop-filter: blur(10px); /* Effet de flou */
+    display: block;
+    padding: 2rem;
+    max-width: 550px;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: background-color 2s ease, backdrop-filter 2s ease, box-shadow 2s ease; /* Ajout de la transition */
+}
+
+  
+  .form-title {
+    font-size: 1.75rem; /* Taille un peu plus grande pour attirer l'attention */
+    line-height: 2rem;
+    font-weight: 700; /* Un poids de police plus fort pour plus d'impact */
+    text-align: center;
+    color: #333; /* Une couleur légèrement plus sombre pour un look professionnel */
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em; /* Un léger espacement des lettres pour un aspect plus soigné */
+}
+
+  
+  .input-container {
+    position: relative;
+  }
+  
+  .input-container input, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+  }
+  
+  .input-container input {
+    background-color: #fff;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 450px;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition fluide pour zoom et ombre */
+}
+
+/* Effet de zoom et amélioration de l'ombre lors du focus */
+.input-container input:focus {
+    transform: scale(1.05); /* Zoomer légèrement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée */
+    outline: none; /* Retirer le contour bleu par défaut */
+}
+
+  
+  .input-container span {
+    display: grid;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    place-content: center;
+  }
+  
+  .input-container span svg {
+    color: #9CA3AF;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .submit {
+    display: block;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    background-color: #4F46E5;
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    width: 100%;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+  }
+  
+  .signup-link {
+    color: #6B7280;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: center;
+  }
+  
+  .signup-link a {
+    text-decoration: underline;
+  }
+
+  .animated-translate {
+    animation: translateIn 1s forwards; /* Modifie la durée ici */
+    opacity: 0; /* Commence caché */
+}
+
+@keyframes translateIn {
+    0% {
+        transform: translateY(20px); /* Position de départ */
+        opacity: 0; /* Invisible au départ */
+    }
+    100% {
+        transform: translateY(0); /* Position finale */
+        opacity: 1; /* Visible à la fin */
+    }
+}
+
+
+.form-label {
+    font-size: 1rem; /* Taille de la police */
+    font-weight: 500; /* Poids de la police */
+    color: #333; /* Couleur du texte */
+    margin-bottom: 0.5rem; /* Espace en dessous du label */
+    display: block; /* S'assurer que le label prend toute la largeur */
+    transition: color 0.3s ease; /* Animation lors du changement de couleur */
+}
+
+/* Optionnel : style pour un label lorsqu'un input est focus */
+.input-container input:focus + .form-label {
+    color: #007BFF; /* Change la couleur au focus */
+    font-weight: 600; /* Renforce le poids de la police au focus */
+}
+
+.main-container {
+    position: relative; /* Position relative pour le conteneur principal */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Prend la hauteur de l'écran */
+    background-image: url('/assets/img/corporate-image-2.jpg'); /* Lien vers l'image corrigé */
+    background-size: cover; /* Couvre tout l'élément */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Ne répète pas l'image */
+}
+
+.main-container::before {
+    content: ''; /* Nécessaire pour le pseudo-élément */
+    position: absolute; /* Position absolue pour superposer l'élément */
+    top: 0; /* Aligné en haut */
+    left: 0; /* Aligné à gauche */
+    right: 0; /* Aligné à droite */
+    bottom: 0; /* Aligné en bas */
+    background-color: rgba(0, 0, 0, 0.4); /* Superposition sombre à 50% d'opacité */
+    pointer-events: none; /* Ignore les événements de la souris */
+}

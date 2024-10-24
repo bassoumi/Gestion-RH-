@@ -1,73 +1,103 @@
-<br><br><br>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<br><br>
+<div style="background-color: #ECF0F1;">
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-6 mt-5">
-      <div class="card">
-        <h5 class="text-center mb-2 mt-2">Nouvel Employé</h5>
+    <div class="col-md-8 mt-5">
+      <div class="card shadow-lg bg-white rounded">
+        <h5 class="text-center custom-title">Nouveau Employé</h5>
         <hr>
         <form class="form-card" [formGroup]="formgroup">
-         
-          <div class="row justify-content-between text-left mb-3 mt-2" style="padding-top: 0;">
+          <div class="row justify-content-between text-left mb-3">
             <div class="form-group col-sm-6 flex-column d-flex"> 
-              <label class="form-control-label px-3">Nom et Prénom <span class="text-danger"> *</span></label>
-              <input type="text" id="fname" name="name" formControlName="name" placeholder="Enter your name"> 
-              <div *ngIf="errorMessage && errorMessage.includes('Username')">
-                <small class="text-danger">{{ errorMessage }}</small>
+              <label class="form-control-label">
+                <i class="fas fa-user"></i> Nom et Prénom <span class="text-danger"> *</span>
+              </label>
+              <input type="text" id="fname" name="name" formControlName="name" class="form-control" placeholder="Entrez votre nom">
+              <div *ngIf="formgroup.get('name')?.invalid && (formgroup.get('name')?.touched || formgroup.get('name')?.dirty)">
+                <small class="text-danger">Nom et Prénom est requis.</small>
               </div>
             </div>
             <div class="form-group col-sm-6 flex-column d-flex"> 
-              <label class="form-control-label px-3">Adresse<span class="text-danger"> *</span></label> 
-              <input type="text" id="lname" name="adresse" formControlName="adresse" placeholder="Enter your address"> 
+              <label class="form-control-label">
+                <i class="fas fa-map-marker-alt"></i> Adresse<span class="text-danger"> *</span>
+              </label>
+              <input type="text" id="lname" name="adresse" formControlName="adresse" class="form-control" placeholder="Entrez votre adresse">
+              <div *ngIf="formgroup.get('adresse')?.invalid && (formgroup.get('adresse')?.touched || formgroup.get('adresse')?.dirty)">
+                <small class="text-danger">Adresse est requise.</small>
+              </div>
             </div>
           </div>
-          <div class="row justify-content-between text-left mb-3" style="padding-top: 0;">
+
+          <div class="row justify-content-between text-left mb-3">
             <div class="form-group col-sm-6 flex-column d-flex"> 
-              <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label> 
-              <input type="email" id="email" name="email" formControlName="email" placeholder="email"> 
-              <div *ngIf="errorMessage && errorMessage.includes('Email')">
-                <small class="text-danger">{{ errorMessage }}</small>
+              <label class="form-control-label">
+                <i class="fas fa-envelope"></i> Email<span class="text-danger"> *</span>
+              </label>
+              <input type="email" id="email" name="email" formControlName="email" class="form-control" placeholder="Entrez votre email">
+              <div *ngIf="formgroup.get('email')?.invalid && (formgroup.get('email')?.touched || formgroup.get('email')?.dirty)">
+                <small class="text-danger">Email est requis et doit être valide.</small>
               </div>
             </div>
             <div class="form-group col-sm-6 flex-column d-flex"> 
-              <label class="form-control-label px-3">Numero de Telephone <span class="text-danger"> *</span></label> 
-              <input type="text" id="mob" name="phone" formControlName="phone" placeholder="Phone"> 
+              <label class="form-control-label">
+                <i class="fas fa-phone"></i> Numero de Téléphone <span class="text-danger"> *</span>
+              </label>
+              <input type="text" id="mob" name="phone" formControlName="phone" class="form-control" placeholder="Entrez votre numéro de téléphone">
+              <div *ngIf="formgroup.get('phone')?.invalid && (formgroup.get('phone')?.touched || formgroup.get('phone')?.dirty)">
+                <small class="text-danger">Numéro de téléphone est requis.</small>
+              </div>
             </div>
           </div>
-          <div class="row justify-content-between text-left mb-0" style="padding-top: 0;">
-            <div class="form-group col-sm-6 flex-column mb-4 d-flex">
-              <label class="form-control-label px-3">Département<span class="text-danger"> *</span></label>
+
+          <div class="row justify-content-between text-left mb-3">
+            <div class="form-group col-sm-6 flex-column d-flex"> 
+              <label class="form-control-label">
+                <i class="fas fa-building"></i> Département<span class="text-danger"> *</span>
+              </label>
               <select id="department" formControlName="department" name="department" class="form-control" required>
                 <option value="" disabled selected>Choisissez votre département</option>
                 <option value="informatique">Informatique</option>
                 <option value="vente">Ventes</option>
                 <option value="achat">Achat</option>
               </select>
+              <div *ngIf="formgroup.get('department')?.invalid && (formgroup.get('department')?.touched || formgroup.get('department')?.dirty)">
+                <small class="text-danger">Département est requis.</small>
+              </div>
             </div>
             <div class="form-group col-sm-6 flex-column d-flex" id="jobGroup" style="display: none;"> 
-              <label class="form-control-label px-3">Poste<span class="text-danger"> *</span></label> 
+              <label class="form-control-label">
+                <i class="fas fa-briefcase"></i> Poste<span class="text-danger"> *</span>
+              </label>
               <select id="job" formControlName="job" name="job" class="form-control" required>
                 <option value="" disabled selected>Choisissez votre poste</option>
               </select>
             </div>
           </div>
-          <div class="row justify-content-between text-left mb-3" style="padding-top: 0;">
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3">Télécharger l'image<span class="text-danger"> *</span></label>
-              <input type="file" id="image" (change)="onFileChange($event)">
+
+          <div class="row justify-content-between text-left mb-3">
+            <div class="form-group col-sm-6 flex-column d-flex"> 
+              <label class="form-control-label">
+                <i class="fas fa-upload"></i> Télécharger l'image<span class="text-danger"> *</span>
+              </label>
+              <input type="file" id="image" (change)="onFileChange($event)" class="form-control-file">
             </div>
             <div class="form-group col-sm-6 flex-column d-flex">
-              <!-- Affichage de l'image -->
-              <img *ngIf="imageUrl" [src]="imageUrl.toString()" alt="Uploaded Image" class="img-fluid rounded mt-2">
+              <img *ngIf="imageUrl" [src]="imageUrl.toString()" alt="Image téléchargée" class="img-fluid rounded mt-2">
             </div>
           </div>
-          <div class="form-group col-sm-6 flex-column d-flex ml-auto mb-3">
-            <label class="form-control-label px-3"><span class="text-danger"></span></label>
+
+          <div class="form-group col-sm-6 flex-column d-flex ml-auto">
             <div class="d-flex justify-content-end">
-              <button type="button" class="btn btn-primary"  (click)="addUser()">Ajouter un Employé</button>
+              <button type="button" class="btn btn-primary" (click)="addUser()">Ajouter un Employé</button>
+            </div>
+            <div *ngIf="errorMessage" class="text-danger text-center mt-2">
+              {{ errorMessage }}
             </div>
           </div>
         </form>
       </div>
     </div>
   </div>
+</div>
 </div>

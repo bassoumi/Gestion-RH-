@@ -1,60 +1,51 @@
-<!-- 
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <label for="username">Username:</label>
-    <input id="username" formControlName="username" type="text"><br>
+
+<main class="main-container">
+
+   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form animated-translate ">
+    <!-- Titre du formulaire -->
+    <p class="form-title">Connectez-vous </p>
+    
+    <!-- Champ Email -->
+    <label for="username" class="form-label">
+      Nom d'utilisateur
+  </label>
   
-    <label for="password">Password:</label>
-    <input id="password" formControlName="password" type="password"><br>
+    <div class="input-container">
+    
+      <input
+        id="username" 
+        formControlName="username"
+        type="email"
+        placeholder="Entrez votre Nom de Utilisateur"
+      />
+      <span>
+        <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+        </svg>
+      </span>
+    </div>
   
-    <button type="submit">Login</button>
+    <!-- Champ Mot de passe -->
+    <label for="username form-label">
+      Mot de passe    </label>
+    <div class="input-container">
+      <input
+        formControlName="password"
+        type="password"
+        placeholder="Entrez votre mot de passe"
+      />
+      <span>
+        <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+          <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+        </svg>
+      </span>
+    </div>
+  
+    <!-- Bouton de soumission -->
+    <button class="submit" type="submit">
+      Se connecter  </button>
+  
+
   </form>
-   -->
-
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <!-- page -->
-<main
-class="mx-auto flex min-h-screen w-full items-center justify-center bg-gray-900 text-white"
->
-<!-- component -->
-<section class="flex w-[30rem] flex-col space-y-10">
-  <div class="text-center text-4xl font-medium">Log In</div>
-
-  <div
-    class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500"
-  >
-    <input
-      id="username" 
-      formControlName="username"
-      type="text"
-      name="username"
-      placeholder="Username"
-      class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none"
-    />
-  </div>
-
-  <div
-    class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500"
-  >
-    <input
-      formControlName="password"
-      type="password"
-      placeholder="Password"
-      class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none"
-    />
-  </div>
-
-  <button
-    class="transform rounded-sm bg-indigo-600 py-2 font-bold duration-300 hover:bg-indigo-400"
-  type="submit">
-    LOG IN
-  </button>
-
-  <a
-    href="#"
-    class="transform text-center font-semibold text-gray-500 duration-300 hover:text-gray-300"
-    >FORGOT PASSWORD?</a
-  >
-</section>
-</main>
-
-</form>
+  

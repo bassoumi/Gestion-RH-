@@ -6,7 +6,55 @@ body{
 .card-margin {
     margin-bottom: 1.875rem;
 }
+.my-custom-title {
+  font-size: 1rem; /* Taille plus grande */
+  margin-top: 15px; /* Ajuster l'espacement en haut */
+  margin-left: 20px; /* Espace entre le texte et la ligne */
+}
+.Btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100px;
+  height: 40px;
+  right: 0px;
+  border: none;
+  padding: 0px 20px;
+  background-color: rgb(71, 38, 255);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  transition-duration: .3s;
+}
 
+.svg {
+  width: 13px;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  fill: white;
+  transition-duration: .3s;
+}
+
+.Btn:hover {
+  color: transparent;
+}
+
+.Btn:hover svg {
+  right: 43%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  transition-duration: .3s;
+}
+
+.Btn:active {
+  transform: translate(3px , 3px);
+  transition-duration: .3s;
+  box-shadow: 2px 2px 0px rgb(140, 32, 212);
+}
 .card {
     border: 0;
     box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
@@ -310,4 +358,242 @@ body{
   text-transform: uppercase;
 }.bg-gray-200 {
   background-color: #e2e8f0; /* Couleur gris clair */
+}
+.department-header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centre les éléments horizontalement */
+  margin: 20px 0; /* Ajuste la marge autour de l'élément */
+}
+
+.hr-custom {
+  flex-grow: 1; /* Permet à la ligne de s'étendre pour remplir l'espace */
+  height: 6px; /* Épaisseur de la ligne */
+  background-color: #4774c2; /* Couleur de la ligne (noir ici) */
+  border: none; /* Supprime la bordure par défaut */
+  margin: 0 10px; /* Ajoute de l'espace autour des lignes */
+}
+
+h3 {
+  margin: 0; /* Supprime la marge par défaut du h3 */
+}
+
+/* From Uiverse.io by cssbuttons-io */ 
+.noselect {
+  width: 150px;
+  height: 40px;
+  
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  background: #e62222;
+  
+ }
+ 
+ .noselect, .noselect span {
+  transition: 200ms;
+ }
+ 
+ .noselect .text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+ }
+ 
+ .noselect .icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ 
+ .noselect svg {
+  width: 15px;
+  fill: #eee;
+ }
+ 
+ .noselect:hover {
+  background: #ff3636;
+ }
+ 
+ .noselect:hover .text {
+  color: transparent;
+ }
+ 
+ .noselect:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+ }
+ 
+ .noselect:focus {
+  outline: none;
+ }
+ 
+ .noselect:active .icon svg {
+  transform: scale(0.8);
+ }
+
+ .custom-title {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+  animation: colorChange 3s infinite alternate; /* Animation de changement de couleur */
+}
+
+/* Définition de l'animation pour changer la couleur */
+@keyframes colorChange {
+  0% {
+    color: #333; /* Couleur initiale */
+  }
+  50% {
+    color: #007BFF; /* Couleur intermédiaire (bleu) */
+  }
+  100% {
+    color: #333; /* Dernière couleur (orange) */
+  }
+}
+
+/* Animation class */
+.animated-translate {
+  animation: translateIn 1s forwards;
+  opacity: 0; /* Start hidden */
+}
+
+@keyframes translateIn {
+  0% {
+      transform: translateY(20px); /* Start position */
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0); /* End position */
+      opacity: 1;
+  }
+}
+
+
+.nav {
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 10;
+  background-color: #727686;
+  border-radius: 50px;
+
+}
+
+.navV {
+  cursor: pointer;
+  position: absolute;
+  top: 130%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 10;
+  background-color: #727686;
+  border-radius: 50px;
+
+}
+
+.nav.prev {
+  left: 0;
+}
+
+.nav.next {
+  right: 0;
+}
+
+.nav:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navV.prev {
+  left: 0;
+}
+
+.navV.next {
+  right: 0;
+}
+
+.navV:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.slider-container {
+  position: relative;
+  overflow: hidden; /* Pour cacher les éléments en dehors de la zone visible */
+}
+
+.slide-wrapper {
+  display: flex;
+  transition: transform 3s ease; /* Durée de 3 secondes pour l'animation */
+}
+
+.slide-item {
+  flex: 0 0 33.333%; /* Pour s'assurer que chaque élément prend 1/3 de la largeur du conteneur */
+}
+
+/* Animation pour le slide vers la gauche */
+.slide-left {
+  transform: translateX(-100%); /* Glissement vers la gauche */
+}
+
+/* Animation pour le slide vers la droite */
+.slide-right {
+  transform: translateX(100%); /* Glissement vers la droite */
+}
+.navA {
+  cursor: pointer;
+  position: absolute;
+  top: 200%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 10;
+  background-color: #727686;
+  border-radius: 50px;
+
+}
+
+.navA.prev {
+  left: 0;
+}
+
+.navA.next {
+  right: 0;
+}
+
+.navA:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }

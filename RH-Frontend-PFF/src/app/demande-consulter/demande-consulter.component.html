@@ -1,7 +1,7 @@
 
 
 <br><br><br><br><br><br><br>
-<p class="ml-5 text-lg" style="margin-left: 30px;">Nombre total de demandes : {{ nombreDemandes  }}</p>
+<p class="nombre-demandes">Nombre total de demandes : {{ nombreDemandes }}</p>
 <div class="row justify-content-center">
 <div class="table-responsive-sm" style="width: 80%;">
  
@@ -24,7 +24,7 @@
                 <td>{{ demande.user }}</td>
                 <td>{{ demande.title }}</td>
                 <td>{{ demande.number_of_days }}</td>
-                <td>{{ demande.reason }}</td>
+                <td>{{ demande.reason | truncate:15  }}</td>
                 <td>{{ demande.date_debut | date }}</td>
                 <td class="text-center">
                     <button (click)="approuverDemande(demande)" class="btn btn-success rounded mx-2">Approuver</button>

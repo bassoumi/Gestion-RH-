@@ -1,20 +1,31 @@
 .nav-link {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 8px 10px;
   color: white;
-  font-size: 1.25rem;
-  font-weight: 600;
+  margin-bottom: -20px !important; /* Ajustement avec !important */
+  font-weight: 400;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 20px;
 }
+
+
+/* Aligner les liens à gauche */
+.nav {
+
+  display: flex; /* Utilise flex pour aligner les éléments */
+  justify-content: flex-start; /* Aligne tous les éléments à gauche */
+}
+
 
 .nav-link:last-child {
   margin-right: 0; /* Remove the margin from the last element */
 }
 
-.nav-link:hover , .nav-link.active{
-  color: rgb(232, 54, 232);
-  text-decoration: underline;
+.nav-link:hover,
+.nav-link.active {
+  color: #ECF0F1; /* Couleur au survol ou si actif */
+  text-decoration: underline; /* Soulignement lors du survol ou actif */
+  text-shadow: 0 0 10px rgba(236, 240, 241, 0.7), 0 0 30px rgba(236, 240, 241, 0.5); /* Ombre lumineuse */
 }
 .relative {
     position: relative;
@@ -22,35 +33,35 @@
 }
 
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 14%;
-    background-color:  #4a5568;
-    z-index: 1;
-    min-width: 160px;
-    padding: 0;
-    margin: 0;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #4a5568;
+  z-index: 1;
+  min-width: 160px;
+  padding: 0;
+  margin: 0;
 }
 
 .relative:hover .dropdown-menu {
-    display: block;
+  display: block;
 }
 
 .dropdown-item {
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    color: white;
-    font-size: 18px;
-    background-color: #4a5568;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: white;
+  font-size: 18px;
+  background-color: #4a5568;
 }
 
 .dropdown-item:hover {
-    background-color: #f1f1f1;
-    text-decoration: underline;
-    color: #4a5568;
-    font-weight: bold;
+  background-color: #f1f1f1;
+  text-decoration: underline;
+  color: #4a5568;
+  font-weight: bold;
 }
 
 
@@ -67,8 +78,22 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 5px; /* Adjust as needed */
-  right:0px; /* Adjust as needed */
+  top: 8px; /* Adjust as needed */
+  right:165px; /* Adjust as needed */
   font-size: 18px; /* Adjust as needed */
   font-weight: bold; /* Make the exclamation mark bold */
+}
+.bg-gray-700 {
+  padding: 10px 0; /* Réduit le padding vertical */
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Réduit la taille de l'ombre */
+}
+
+.rounded {
+  border-radius: 5px; /* Réduit le rayon des coins arrondis */
+}
+.department-link {
+  cursor: pointer; /* Changer le curseur en une main pour indiquer un lien cliquable */
 }

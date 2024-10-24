@@ -1,44 +1,38 @@
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
 
-<br><br><br><br><br><br>
+<br><br><br><br>
 
-<div class="card bg-primary-subtle mt-4">
-    <img src="../../assets/img/conges2018.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <div class="text-section">
-        <h4 class="card-title fw-bold">Demande de congée</h4>
-        <p class="card-text">Toutes les demandes de congé sont centralisées ici pour un suivi facile et une gestion efficace. Consultez cette section pour vérifier l'état des demandes de congé.</p>
-      </div>
-      <div class="cta-section">
-        <div></div>
-        <a routerLink="/demande" class="btn btn-dark">Consulter tous les demandes</a>
-      </div>
+<div class="card bg-primary-subtle mt-4 professional-card">
+  <img src="../../assets/img/conges2018.jpg" class="card-img-top professional-image">
+  <div class="card-body">
+    <div class="text-section">
+      <h4 class="professional-title">Demande de congé</h4>
+      <p class="professional-info">Toutes les demandes de congé sont centralisées ici pour un suivi facile et une gestion efficace. Consultez cette section pour vérifier l'état des demandes de congé.</p>
+    </div>
+    <a routerLink="/demande" class="btn btn-outline-dark btn-lg professional-btn">
+      <i class="fas fa-file-alt"></i> Consulter toutes les demandes
+  </a>
+  </div>
+</div>
+<div class="card bg-primary-subtle mt-4 professional-card">
+  <img src="../../assets/img/Formation-1200x704.jpg" class="card-img-top professional-image" alt="Formation Image">
+  <div class="card-body">
+    <div class="text-section">
+      <h4 class="professional-title">Demande de participation en formations</h4>
+      <p class="professional-info">Toutes les demandes de participation sont stockées ici pour référence future et gestion. Veuillez consulter cette section pour vérifier les demandes en attente ou approuvées.</p>
+    </div>
+
+    <div class="cta-section">
+      <a routerLink="/formation" class="btn btn-outline-dark btn-lg professional-btn">
+        <i class="fas fa-book"></i> Consulter Formations
+    </a>
+    <a routerLink="/add-formation"  class="btn btn-outline-dark btn-lg professional-btn ml-3">
+        <i class="fas fa-plus-circle" style="margin-right: 10px;"></i> Ajouter Formations
+    </a>
+    <a routerLink="/employee-interssee" class="btn btn-outline-dark btn-lg professional-btn ml-3">
+        <i class="fas fa-user " style="margin-right: 10px;"></i> Employée Intéressé
+    </a>   
     </div>
   </div>
-
-  <div class="card bg-primary-subtle mt-4">
-    <img src="../../assets/img/Formation-1200x704.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <div class="text-section">
-        <h4 class="card-title fw-bold">Demande de participé en formations</h4>
-        <p class="card-text">Toutes les demandes de participation sont stockées ici pour référence future et gestion. Veuillez consulter cette section pour vérifier les demandes en attente ou approuvées.</p>
-        
-      </div>
-      <div class="cta-section mb-3  ml-3">
-        <div></div>
-        
-        <a routerLink="/formation" class="btn btn-dark ">Consulter formations</a>
-      </div>
-      <div class="cta-section mb-3  ml-3">
-        <div></div>
-        
-        <a routerLink="/add-formation" class="btn btn-dark ml-3">Ajouter formations</a>    
-        </div>
-        <div class="cta-section mb-3 ml-3">
-          <div></div>
-          
-          <a routerLink="/employee-interssee" class="btn btn-dark mr-3">Employée intéressé</a>    
-          </div>
-     
-    </div>
-  </div>
+</div>

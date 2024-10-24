@@ -1,0 +1,26 @@
+.animated-translate {
+    animation: translateIn 1s forwards;
+    opacity: 0; /* Start hidden */
+  }
+  
+  @keyframes translateIn {
+    0% {
+        transform: translateY(20px); /* Start position */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End position */
+        opacity: 1;
+    }
+  }
+
+  .title {
+    margin-bottom: 50px;
+    font-size: 1.8rem; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    color: #2c3e50; /* Darker color for professionalism */
+    margin-bottom: 15px; /* Space below the title */
+    text-align: center; /* Center the text */
+    text-transform: uppercase; /* Uppercase letters for emphasis */
+    letter-spacing: 1px; /* Space between letters */
+    }

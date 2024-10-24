@@ -1,0 +1,45 @@
+.professional-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light grey background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.form-group label {
+    font-weight: 600; /* Make label text bold */
+    display: flex;
+    align-items: center; /* Align icon with label text */
+    margin-bottom: 8px;
+    color: #333; /* Professional dark grey text */
+}
+
+.form-group label i {
+    margin-right: 8px;
+    color: #007bff; /* Icon color matching Bootstrap primary */
+}
+
+.input-group .input-group-text {
+    background-color: #e9ecef;
+    border-radius: 0 0.25rem 0.25rem 0;
+    color: #555;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button[type="submit"] i {
+    margin-left: 8px;
+}

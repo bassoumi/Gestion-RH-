@@ -1,0 +1,13 @@
+.nombre-demandes {
+    margin-left: 130px;
+    font-size: 1.25rem; /* Adjusts the text size to a larger scale */
+    color: #333; /* Dark grey for a more elegant look */
+    font-weight: 600; /* Slightly bold for emphasis */
+    padding: 10px 0;
+    border-left: 4px solid #007bff; /* Adds a colored vertical border for emphasis */
+    padding-left: 15px; /* Adds padding between the text and the border */
+    background-color: #f0f1f2; /* Light background for a clean look */
+    border-radius: 5px; /* Rounded corners for a polished finish */
+    width: 80%;
+  }
+  

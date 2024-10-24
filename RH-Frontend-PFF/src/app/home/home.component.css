@@ -830,7 +830,7 @@
   
   .hero:before {
     content: "";
-    background: color-mix(in srgb, var(--background-color), transparent 30%);
+    background: color-mix(in srgb, var(--background-color), transparent 60%);
     position: absolute;
     inset: 0;
     z-index: 2;
@@ -1769,6 +1769,19 @@
   /*--------------------------------------------------------------
   # Starter Section Section
   --------------------------------------------------------------*/
-  .starter-section {
-    /* Add your styles here */
-  }
+  .animated-home {
+    animation: translateHomeIn 1s forwards;
+    opacity: 0; /* Start hidden */
+}
+
+@keyframes translateHomeIn {
+    0% {
+        transform: translateY(20px); /* Start position */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End position */
+        opacity: 1;
+    }
+}
+

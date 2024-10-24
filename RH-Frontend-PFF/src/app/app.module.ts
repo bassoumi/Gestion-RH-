@@ -31,6 +31,7 @@ import { LesDemandesComponent } from './les-demandes/les-demandes.component';
 import { FormationComponent } from './formation/formation.component';
 import { ConsulterLesFormationsComponent } from './consulter-les-formations/consulter-les-formations.component';
 import { EmployeeIntersseeComponent } from './employee-interssee/employee-interssee.component';
+import { CapitalizeWordsPipe, TruncatePipe } from './truncate.pipe';
 
 
 
@@ -60,6 +61,8 @@ import { EmployeeIntersseeComponent } from './employee-interssee/employee-inters
     FormationComponent,
     ConsulterLesFormationsComponent,
     EmployeeIntersseeComponent,
+    TruncatePipe,
+    CapitalizeWordsPipe,
   ],
   imports: [
 

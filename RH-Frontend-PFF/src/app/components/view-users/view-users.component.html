@@ -4,73 +4,119 @@
 <div class="container mt-5">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="text-center">View Users</h1>
-
-        <div class="row mt-3">
-          <h3 class="ml-5 mb-4">Department de Informatique :</h3>
-          <div *ngIf="hasInformatiqueUsers()" class="row">
-            <div *ngFor="let user of getInformatiqueUsers()" class="col-md-4 mb-4 ">
-              <div class="card card-margin bg-gray-200">
-                <div class="card-header no-border">
-                  <img [src]="user.image" alt="{{ user.name }}'s profile" class="img-fluid rounded-circle mb-2 mt-2" style="width: 60px; height: 60px;">
-                  <h5 class="card-title ml-3 mt-1">{{ user.name }}</h5>
-                </div>
-                <hr class="mt-1">
-                <div class="card-body pt-0">
-                  <div class="widget-49">
-                    <div class="widget-49-meeting-info">
-                      <span class="widget-49-pro-title mb-1"><strong>Email :</strong> {{ user.email }}</span><br>
-                      <span class="widget-49-pro-title mb-1"><strong>Department :</strong> {{ user.department }}</span><br>
-                      <span class="widget-49-pro-title mb-1"><strong>Poste :</strong> {{ user.job }}</span>
-                    </div>
-                    <div class="widget-49-meeting-action">
-                        <button class="btn btn-primary mr-2" [routerLink]="'/update/' + user.id">Edit</button>
-                        <button class="btn btn-danger" (click)="deleteUser(user.id)">Supprimer</button>
-                    </div>
+        <h1 class="custom-title">Tous Les Employés</h1>
+        <div class="department-header">
+          <hr class="hr-custom">
+          <h3>Department Informatique</h3>
+          <hr class="hr-custom">
+        </div>
+      
+        <div *ngIf="hasInformatiqueUsers()" class="row animated-translate slider-container ">
+          <!-- Boucle pour afficher les utilisateurs (seulement les visibles selon l'index actuel) -->
+          <div *ngFor="let user of getVisibleInformatiqueUsers()" class="col-md-4 mb-4">
+            <div class="card card-margin bg-gray-200">
+              <div class="card-header no-border">
+                <img [src]="user.image" alt="{{ user.name }}'s profile" class="img-fluid rounded-circle mb-2 mt-2" style="width: 70px; height: 60px;">
+                <h5 class="card-title text-center my-custom-title">{{ user.name | capitalizeWords }}</h5>
+              </div>
+              <hr class="mt-0">
+              <div class="card-body pt-0">
+                <div class="widget-49">
+                  <div class="widget-49-meeting-info">
+                    <span class="widget-49-pro-title mb-1"><strong style="margin-right: 50px;">Email :</strong> {{ user.email }}</span><br>
+                    <span class="widget-49-pro-title mb-1"><strong style="margin-right: 50px;">Department :</strong> {{ user.department }}</span><br>
+                    <span class="widget-49-pro-title mb-1"><strong style="margin-right: 70px;">Poste :</strong> {{ user.job }}</span>
+                  </div>
+                  <br>
+                  <div class="widget-49-meeting-action d-flex justify-content-between align-items-center">
+                    <button class="Btn" [routerLink]="'/update/' + user.id">
+                      Mod
+                      <svg class="svg" viewBox="0 0 512 512">
+                        <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
+                      </svg>
+                    </button>                    <button class="noselect" (click)="deleteUser(user.id)">
+                      <span class="text">Supp</span>
+                      <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                          <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+                        </svg>
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-  
+        <div *ngIf="getInformatiqueUsers().length > usersPerPage">
+        <button class="nav prev" (click)="prevSlideInformatique()">&#10094;</button>
+        <button class="nav next" (click)="nextSlideInformatique()">&#10095;</button>
+      </div>
+      </div>
+      
         <!-- Section pour le département Vente -->
-        <div class="row mt-3">
-          <h3 class="ml-5 mb-4">Department de Vente :</h3>
-          <div *ngIf="hasVenteUsers()" class="row">
-            <div *ngFor="let user of getVenteUsers()" class="col-md-4 mb-4">
-              <div class="card card-margin bg-gray-200">
-                <div class="card-header no-border">
-                  <img [src]="user.image" alt="{{ user.name }}'s profile" class="img-fluid rounded-circle mb-2 mt-2" style="width: 60px; height: 60px;">
-                  <h5 class="card-title ml-3 mt-1">{{ user.name }}</h5>
-                </div>
-                <hr class="mt-1">
-                <div class="card-body pt-0">
-                  <div class="widget-49">
-                    <div class="widget-49-meeting-info">
-                      <span class="widget-49-pro-title mb-1"><strong>Email :</strong> {{ user.email }}</span><br>
-                      <span class="widget-49-pro-title mb-1"><strong>Department :</strong> {{ user.department }}</span><br>
-                      <span class="widget-49-pro-title mb-1"><strong>Poste :</strong> {{ user.job }}</span>
-                    </div>
-                    <div class="widget-49-meeting-action">
-                        <button class="btn btn-primary  mr-2" [routerLink]="'/update/' + user.id">Edit</button>  
-                        <button class="btn btn-danger" (click)="deleteUser(user.id)">Supprimer</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <div class="row mt-3">
+  <div class="department-header">
+    <hr class="hr-custom">
+    <h3>Department de Vente</h3>
+    <hr class="hr-custom">
+  </div>
+  <div *ngIf="hasVenteUsers()" class="row animated-translate slider-container">
+    <div *ngFor="let user of getVisibleVenteUsers()" class="col-md-4 mb-4">
+      <div class="card card-margin bg-gray-200">
+        <div class="card-header no-border">
+          <img [src]="user.image" alt="{{ user.name }}'s profile" class="img-fluid rounded-circle mb-2 mt-2" style="width: 70px; height: 60px;">
+          <h5 class="card-title text-center my-custom-title">{{ user.name | capitalizeWords }}</h5>
+        </div>
+        <hr class="mt-0">
+        <div class="card-body pt-0">
+          <div class="widget-49">
+            <div class="widget-49-meeting-info">
+              <span class="widget-49-pro-title mb-1"><strong>Email :</strong> {{ user.email }}</span><br>
+              <span class="widget-49-pro-title mb-1"><strong>Department :</strong> {{ user.department }}</span><br>
+              <span class="widget-49-pro-title mb-1"><strong>Poste :</strong> {{ user.job }}</span>
+            </div>
+            <br>
+            <div class="widget-49-meeting-action d-flex justify-content-between align-items-center">
+              <button class="Btn" [routerLink]="'/update/' + user.id">
+                Mod
+                <svg class="svg" viewBox="0 0 512 512">
+                  <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
+                </svg>
+              </button>              <button class="noselect" (click)="deleteUser(user.id)">
+                <span class="text">Supp</span>
+                <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+                  </svg>
+                </span>
+              </button>
             </div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="row mt-3">
-            <h3 class="ml-5 mb-4">Department de Achat :</h3>
-            <div *ngIf="hasAchatUsers()" class="row">
-              <div *ngFor="let user of getAchatUsers()" class="col-md-4 mb-4">
+    </div>
+    <div *ngIf="getVenteUsers().length > usersPerPage">
+    <button class="navV prev" (click)="prevSlideVente()">&#10094;</button>
+    <button class="navV next" (click)="nextSlideVente()">&#10095;</button>
+    </div>
+</div>
+ 
+
+    <div class="row mt-3">
+          <div class="department-header">
+            <hr class="hr-custom">
+            <h3>Department de Achat </h3>
+            <hr class="hr-custom">
+        </div>
+        <div *ngIf="hasAchatUsers()" class="row">
+              <div *ngFor="let user of getVisibleAchatUsers()" class="col-md-4 mb-4">
                 <div class="card card-margin bg-gray-200">
                   <div class="card-header no-border">
                     <img [src]="user.image" alt="{{ user.name }}'s profile" class="img-fluid rounded-circle mb-2 mt-2" style="width: 60px; height: 60px;">
-                    <h5 class="card-title ml-3 mt-1">{{ user.name }}</h5>
+                    <h5 class="card-title text-center my-custom-title">{{ user.name | capitalizeWords }}</h5>
                   </div>
                   <hr class="mt-1">
                   <div class="card-body pt-0">
@@ -80,19 +126,35 @@
                         <span class="widget-49-pro-title mb-1"><strong>Department :</strong> {{ user.department }}</span><br>
                         <span class="widget-49-pro-title mb-1"><strong>Poste :</strong> {{ user.job }}</span>
                       </div>
-                      <div class="widget-49-meeting-action">
-                          <button class="btn btn-primary  mr-2" [routerLink]="'/update/' + user.id">Edit</button>  
-                          <button class="btn btn-danger" (click)="deleteUser(user.id)">Supprimer</button>
-                        </div>
-                    </div>
+                      <br>
+                      <div class="widget-49-meeting-action d-flex justify-content-between align-items-center">
+                        <button class="Btn" [routerLink]="'/update/' + user.id">
+                          Mod
+                          <svg class="svg" viewBox="0 0 512 512">
+                            <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
+                          </svg>
+                        </button>
+                      
+                        <button class="noselect" (click)="deleteUser(user.id)">
+                          <span class="text">Supp</span>
+                          <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                              <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
     
-  
+    
+      </div>
+      <div *ngIf="getAchatUsers().length > usersPerPage">
+      <button class="navA prev" (click)="prevSlideAchat()">&#10094;</button>
+          <button class="navA next" (click)="nextSlideAchat()">&#10095;</button>
       </div>
     </div>
   </div>
-  

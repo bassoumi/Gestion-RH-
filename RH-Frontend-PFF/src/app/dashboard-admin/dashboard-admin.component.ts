@@ -26,7 +26,7 @@ export class DashboardAdminComponent {
     name: 'default',
     selectable: true,
     group: ScaleType.Ordinal,
-    domain: ['#7cb342', '#ef5350']
+    domain: ['#00BFFF', '#FF0000']
   };
   gradient = false;
   showXAxis = true;

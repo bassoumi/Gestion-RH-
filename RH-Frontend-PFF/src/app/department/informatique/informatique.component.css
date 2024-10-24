@@ -317,3 +317,162 @@ body{
   padding-right: 1rem; /* Add padding to align text properly */
   pointer-events: none; /* Prevent interaction */
 }
+.Btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100px;
+  height: 40px;
+  right: 0px;
+  border: none;
+  padding: 0px 20px;
+  background-color: rgb(71, 38, 255);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  transition-duration: .3s;
+}
+
+.svg {
+  width: 13px;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+  fill: white;
+  transition-duration: .3s;
+}
+
+.Btn:hover {
+  color: transparent;
+}
+
+.Btn:hover svg {
+  right: 43%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  transition-duration: .3s;
+}
+
+.Btn:active {
+  transform: translate(3px , 3px);
+  transition-duration: .3s;
+  box-shadow: 2px 2px 0px rgb(140, 32, 212);
+}
+
+/* From Uiverse.io by cssbuttons-io */ 
+.noselect {
+  width: 100px;
+  height: 40px;
+  
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  background: #e62222;
+  
+ }
+ 
+ .noselect, .noselect span {
+  transition: 100ms;
+ }
+ 
+ .noselect .text {
+  transform: translateX(20px);
+  color: white;
+  font-weight: bold;
+ }
+ 
+ .noselect .icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(60px);
+  height: 40px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ 
+ .noselect svg {
+  width: 15px;
+  fill: #eee;
+ }
+ 
+ .noselect:hover {
+  background: #ff3636;
+ }
+ 
+ .noselect:hover .text {
+  color: transparent;
+ }
+ 
+ .noselect:hover .icon {
+  width: 20px;
+  border-left: none;
+  transform: translateX(10);
+ }
+ 
+ .noselect:focus {
+  outline: none;
+ }
+ 
+ .noselect:active .icon svg {
+  transform: scale(0.8);
+ }
+
+ /* styles.css or your component-specific CSS file */
+ .user-info {
+  text-align: center;
+  margin: 10px 0; /* Adds some spacing between paragraphs */
+}
+
+.user-info p.name {
+  margin-bottom: 8px;
+  font-size: 1.22rem; /* Font size for the name */
+  color: #333; /* Change text color */
+}
+
+.user-info p.job {
+  font-size: 1.1rem; /* Increase font size for the job */
+  color: #666; /* Optional: lighter color for job title */
+  margin: 0; /* Remove default margin from job paragraph */
+  width: 100%; /* Ensure it takes the full width */
+  letter-spacing: 0.05em; /* Increase letter spacing for wider appearance */
+}
+
+
+.user-info p {
+  margin: 0; /* Remove default margin from paragraphs */
+}
+/* styles.css or your component-specific CSS file */
+.title {
+  font-size: 1.8rem; /* Larger font size */
+  font-weight: bold; /* Bold text */
+  color: #2c3e50; /* Darker color for professionalism */
+  margin-bottom: 15px; /* Space below the title */
+  text-align: center; /* Center the text */
+  text-transform: uppercase; /* Uppercase letters for emphasis */
+  letter-spacing: 1px; /* Space between letters */
+}
+/* Animation class */
+.animated-translate {
+  animation: translateIn 1s forwards;
+  opacity: 0; /* Start hidden */
+}
+
+@keyframes translateIn {
+  0% {
+      transform: translateY(20px); /* Start position */
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0); /* End position */
+      opacity: 1;
+  }
+}

@@ -1,37 +1,56 @@
-<br><br><br><br>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
-<div class="card p-4 mt-4 shadow mb-5" style="width: 50%; margin: 0 auto;">
-    <h2 class="mb-4">Demande de congé</h2>
-    <form [formGroup]="formgroup">
+<div style=" background-color: #f0f0f0; ">
+
+<br><br><br>
+
+<div class="  mt-4 shadow mb-5 professional-card" style="width: 50%; margin: 0 auto;">
+    <h2 class="mb-4  text-center" style="padding-top:10px ;">Demande de congé</h2>
+    <form [formGroup]="formgroup" class="professional-form">
         <div class="form-group">
-            <div class="form-group">
-                <label for="title">Title</label>
-                <select class="form-control" formControlName="title" id="title" name="title" required>
-                    <option value="maladie">Maladie</option>
-                    <option value="vaconce">Vaconce</option>
-                    <option value="personel">Personel</option>
-                </select>
-            </div>
-            <label for="number_of_days">Nombre de jours de congé:</label>
+            <label for="title">
+                <i class="fas fa-tag"></i> Title
+            </label>
+            <select class="form-control" formControlName="title" id="title" name="title" required>
+                <option value="maladie">Maladie</option>
+                <option value="vacance">Vacance</option>
+                <option value="personel">Personel</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="number_of_days">
+                <i class="fas fa-calendar-day"></i> Nombre de jours de congé:
+            </label>
             <div class="input-group">
-                <input type="number"  formControlName="number_of_days" class="form-control" id="number_of_days" name="number_of_days" min="0" required>
+                <input type="number" formControlName="number_of_days" class="form-control" id="number_of_days" name="number_of_days" min="0" required>
                 <div class="input-group-append">
                     <span class="input-group-text">jours</span>
                 </div>
             </div>
             <small id="number_of_days_help" class="form-text text-muted">Entrez le nombre de jours de congé que vous souhaitez demander.</small>
         </div>
-
-        <label for="number_of_days">Date de de Debut de congé:</label>
-        <div class="input-group">
-            <input type="date" formControlName="date_debut"  class="form-control" id="date_debut" name="date_debut" min="0" required>
-        </div>
-        <br>
+    
         <div class="form-group">
-            <label for="reason">Raison:</label>
+            <label for="date_debut">
+                <i class="fas fa-calendar-alt"></i> Date de début de congé:
+            </label>
+            <div class="input-group">
+                <input type="date" formControlName="date_debut" class="form-control" id="date_debut" name="date_debut" required>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="reason">
+                <i class="fas fa-comment-dots"></i> Raison:
+            </label>
             <textarea class="form-control" formControlName="reason" id="reason" name="reason" rows="3" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" (click)="addDemande()">Envoyer</button>
+    
+        <button type="submit" class="btn btn-primary" (click)="addDemande()">
+            Envoyer <i class="fas fa-paper-plane"></i>
+        </button>
     </form>
-
+    
+</div>
 </div>

@@ -8,11 +8,20 @@
    /* Centrer la grille sur la page */
   }
   
-  .admin-dashboard-container > div {
+.admin-dashboard-container > div {
+    display: flex; /* Utiliser flexbox pour centrer le contenu */
+    flex-direction: column; /* Aligner les éléments verticalement */
+    justify-content: flex-start; /* Alignement du contenu vers le haut */
     border: 1px solid #ccc; /* Bordure pour visualisation */
-    padding: 10px; /* Espacement interne */
-    height: 300px; /* Hauteur fixe pour chaque bloc de graphique */
-  }
+    padding: 0px; /* Espacement interne */
+    height: 400px; /* Hauteur fixe pour chaque bloc de graphique */
+}
+
+.admin-dashboard-container > div > * {
+  margin-bottom: -10px;
+   /* Réinitialiser les marges des éléments enfants */
+}
+
   /* dashboard-admin.component.css */
 /* dashboard-admin.component.css */
 
@@ -20,16 +29,7 @@
     position: relative; /* Position relative pour le conteneur du graphique */
   }
   
-  .demandes-bar-graphique .chart-container .ngx-charts-legend {
-    position: absolute; /* Position absolue pour la légende */
-    top: 10px; /* Ajustez la position verticale selon vos besoins */
-    right: 10px; /* Ajustez la position horizontale selon vos besoins */
-    background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent pour la légende */
- 
-    border-radius: 5px; /* Coins arrondis */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère pour l'effet de profondeur */
-  }
-  
+
 .total-requests-line-graphique {
     border: 1px solid #ccc; /* Bordure pour visualisation */
  /* Espacement interne */
@@ -44,7 +44,7 @@
   
 /* Styles spécifiques au graphique des demandes par statut */
 .admin-demandes-graphique ngx-charts-bar-vertical {
-    height: 300px; /* Ajustez la hauteur au besoin */
+    height: 200px; /* Ajustez la hauteur au besoin */
   }
   
   /* Styles pour ajuster la taille des barres */
@@ -63,4 +63,5 @@
     height: 100%; /* Hauteur à 100% pour remplir le conteneur parent */
   }
   /* dashboard-admin.component.css */
+
 

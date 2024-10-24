@@ -271,3 +271,89 @@ body {
       width: 220px;
     }
   }
+  .professional-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    width: 90%; /* Adjusts the width of the card */
+    margin: 0 auto;
+}
+
+.professional-card:hover {
+    transform: scale(1.02);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.text-section {
+    max-width: 55%;
+}
+
+.professional-title {
+    font-size: 1.5rem;
+    color: #222;
+    margin-top: 15px;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.professional-info {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+}
+
+.cta-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 45%;
+}
+
+.professional-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.professional-btn:hover {
+    background-color: #222;
+    color: #fff;
+}
+.cta-section {
+  display: flex;
+  justify-content: flex-start; /* Aligns buttons to the left */
+  gap: 15px; /* Adds spacing between buttons */
+  flex-wrap: wrap; /* Ensures buttons wrap if screen size is too small */
+}
+
+.professional-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.professional-btn:hover {
+  background-color: #222;
+  color: #fff;
+}

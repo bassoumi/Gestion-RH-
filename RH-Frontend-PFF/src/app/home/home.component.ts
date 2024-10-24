@@ -8,8 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(private authService: UsersService , private router : Router) {}
- 
+  constructor(public authService: UsersService , private router : Router,) {}
+  ngOnInit() {
+    this.authService.checkAuthenticated().subscribe();
+  }
+
   
   logout() {
     console.log('Logout clicked');
