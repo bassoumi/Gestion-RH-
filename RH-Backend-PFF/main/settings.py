@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'main.wsgi.application'
 DATABASES = {
        'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DBroussource',
+        'NAME': 'gestion-rh',
         'USER': 'root',
         'PASSWORD':'bassoumi2020',
         'HOST': 'localhost',
@@ -136,6 +136,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
+    "https://ressource-humaine-48d99.web.app/",
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -145,8 +146,9 @@ REST_FRAMEWORK = {
 
 from datetime import timedelta
 
+
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=365 * 100), 
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
@@ -164,7 +166,7 @@ SIMPLE_JWT = {
     'TOKEN_TYPE_CLAIM': 'token_type',
     'JTI_CLAIM': 'jti',
     'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
-    'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
+    'SLIDING_TOKEN_LIFETIME': timedelta(days=365 * 100),  
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 import os
