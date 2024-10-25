@@ -135,8 +135,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:4200",
-    "https://ressource-humaine-48d99.web.app/",
+   
+    "https://ressource-humaine-48d99.web.app"
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
